@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Jurmerlo | Blog</title><description/><link>https://jurmerlo.github.io/</link><language>en</language><item><title>Lunas Game Engine Introduction</title><link>https://jurmerlo.github.io/blog/2025-04-06_lunas_start/</link><guid isPermaLink="true">https://jurmerlo.github.io/blog/2025-04-06_lunas_start/</guid><description>Introducing Lunas, a lightweight and flexible 2D game engine built with TypeScript and WebGL. Follow along as I document its development, from core features to plugin extensions. read more
+
+</description><pubDate>Sun, 06 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;a-new-game-engine&quot;&gt;A New Game Engine&lt;/h2&gt;
+&lt;p&gt;I have been planning to create the next iteration of my game engine for a while. This time, I want to blog about its development, explaining how it works and why. I’m calling the engine “Lunas.” Below are the requirements I have outlined for the engine.&lt;/p&gt;
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;2D&lt;/strong&gt;&lt;br&gt;
+2D is easier to implement and maintain. Since I only make 2D games, there is no need for 3D support.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flexible&lt;/strong&gt;&lt;br&gt;
+I want a small, core engine that is easy to extend. Asset management, events, the update loop, rendering, and input will form the core. Everything else will be implemented as plugin libraries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Easy to Use&lt;/strong&gt;&lt;br&gt;
+The engine’s structure should make it easy to get started with a game while allowing users to structure their games as they see fit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Web-First&lt;/strong&gt;&lt;br&gt;
+I create small games that I want to be easy to publish on a website. Tools like &lt;a href=&quot;https://capacitorjs.com&quot;&gt;Capacitor&lt;/a&gt; and &lt;a href=&quot;https://www.electronjs.org&quot;&gt;Electron&lt;/a&gt; can be used to publish native apps if needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;&lt;br&gt;
+For a web-based game engine, TypeScript makes sense to me. I prefer using types as they help catch bugs and make the code easier to read.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;WebGL&lt;/strong&gt;&lt;br&gt;
+I want to use shaders and good performance. Since WebGPU is not ready yet, WebGL is the best option for now.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;plugins&quot;&gt;Plugins&lt;/h3&gt;
+&lt;p&gt;Here are some plugins I plan to create for Lunas to extend the core functionality:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scene System&lt;/strong&gt;&lt;br&gt;
+A scene is a container for the current state of the game, such as a menu scene or a level scene. A scene will include cameras and entities to simplify displaying and updating elements on the screen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sprite Atlas and Animation&lt;/strong&gt;&lt;br&gt;
+Support for loading and using sprite atlases and animations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collision&lt;/strong&gt;&lt;br&gt;
+A simple AABB physics collision system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Box2D&lt;/strong&gt;&lt;br&gt;
+A wrapper around a TypeScript port of the Box2D physics engine.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tweening&lt;/strong&gt;&lt;br&gt;
+Support for value tweening over time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tilemap&lt;/strong&gt;&lt;br&gt;
+Tilemap support for formats like Tiled and LDtk. This could involve multiple separate plugins.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There will likely be more plugins I think of during development of the engine.&lt;/p&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;In the next post, I will cover setting up the project and laying the groundwork for the engine.&lt;/p&gt;</content:encoded><category>lunas</category></item><item><title>New Personal Website</title><link>https://jurmerlo.github.io/blog/2025-04-05_personal_website/</link><guid isPermaLink="true">https://jurmerlo.github.io/blog/2025-04-05_personal_website/</guid><description>A brief overview of my new website built with Astro and Starlight, featuring a project showcase and a blog to document my journey in creating a 2D game engine. read more
+
+</description><pubDate>Sat, 05 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It’s time for a new iteration of my website. I want to showcase some of the projects I’ve been working on and start writing a blog again.&lt;br&gt;
+This time, I’m planning to create a small 2D game engine. I want to document how everything works and share my progress along the way.&lt;/p&gt;
+&lt;p&gt;For this iteration, I’m using &lt;a href=&quot;https://astro.build&quot;&gt;Astro&lt;/a&gt; to build the site, along with the &lt;a href=&quot;https://starlight.astro.build&quot;&gt;Starlight&lt;/a&gt; template.&lt;br&gt;
+Starlight is designed for documentation but there is a &lt;a href=&quot;https://starlight-blog-docs.vercel.app&quot;&gt;blog plugin&lt;/a&gt;. I don’t want to spend too much time on the site’s design, and the Starlight template has everything I need out of the box. I can use the documentation section for my project showcase and have a separate blog section for updates.&lt;/p&gt;
+&lt;p&gt;My plan is to post here regularly as I work on my projects and learn new things.&lt;/p&gt;</content:encoded></item></channel></rss>
