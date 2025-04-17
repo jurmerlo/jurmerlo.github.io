@@ -6,18 +6,14 @@ next: false
 tags: [lunas]
 ---
 
-In my last post I wrote about the requirements for Lunas. It will be a web first game engine in TypeScript. I will use 
-[Node.js](https://nodejs.org/en), [Pnpm](https://pnpm.io) and [Vite](https://vite.dev) to build the engine. There are 
-some other dev dependencies like prettier and eslint, but I'm not using any dependencies for the engine core.
+In my last post, I wrote about the requirements for Lunas. It will be a web-first game engine written in TypeScript. I will use [Node.js](https://nodejs.org/en), [Pnpm](https://pnpm.io), and [Vite](https://vite.dev) to build the engine. There are some other dev dependencies like Prettier and ESLint, but I won't be using any libraries for the engine core.
 
 ### Pnpm
 I'm using Pnpm because it is faster than npm and caches libraries across projects. It is a personal preference. 
 
 ### Vite
-Bundling with Vite is not really necessary as this library will be used inside a game project so why am I using Vite?  
-In previous iterations I always needed a separate project to see if the engine works correctly while working on it. 
-With Vite I can setup a project to run with the dev server, but export only the engine library when publishing. This 
-way I can have both in the same project.
+Bundling with Vite is not necessary since this library will be used inside a game project. So why am I using Vite?  
+In previous iterations, I always needed a separate project to test if the engine worked correctly during development. With Vite, I can set up a project to run with the dev server while exporting only the engine library when publishing. This way, I can have both in the same project.
 
 The project structure looks like this:
 
@@ -30,8 +26,7 @@ src
 ```
 The `game` folder is used for testing. Everything in the `lunas` folder is exported when building the engine.
 
-
-To make this work I have `vite.config.ts` that looks like this:
+To make this work, I have a `vite.config.ts` that looks like this:
 ```ts
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
@@ -50,9 +45,9 @@ export default defineConfig({
 });
 ```
 
-Using the `index.ts` inside the lunas folder to as entry point and only export the types inside the `lunas` folder.
+Using the `index.ts` inside the `lunas` folder as the entry point. Only the types inside the `lunas` folder are exported.
 
-I also have an extra tsconfig called `tsconfig.build.json`:
+I also have an additional tsconfig called `tsconfig.build.json`:
 ```json
 {
   "extends": "./tsconfig.json",
@@ -60,15 +55,14 @@ I also have an extra tsconfig called `tsconfig.build.json`:
 }
 ```
 
-This is used for `tsc` in the build script in the `package.json`.
+This is used for `tsc` in the build script in the `package.json`:
 ```json
 "build": "tsc -p tsconfig.build.json && vite build",
 ```
 
 ### Game Loop
-If want the core engine to be callback based. So you can add your own functions to be called each `update` and `draw` etc. 
-For now I added a quick game loop using `requestAnimationFrame`. Getting a WebGL renderer up and running will take some time so 
-for now I'm just clearing the screen. This is what the game class looks like for now:
+I want the core engine to be callback-based, allowing users to add their own functions to be called during `update`, `draw`, etc.  
+For now, I have added a simple game loop using `requestAnimationFrame`. Setting up a WebGL renderer will take some time, so for now, I'm just clearing the screen. Here's what the `Game` class looks like for now:
 ```ts
 /**
  * The main game class that handles the game loop and rendering.
@@ -158,7 +152,7 @@ export class Game {
 }
 ```
 
-The WebGL context will be separated out of the game class in the future. If you want you can look at the source [here](https://github.com/lunas-engine/lunas-core/tree/v0.0.1). This is the code at the point of when this post was written.
+The WebGL context will be separated out of the `Game` class in the future. If you're interested, you can check out the source [here](https://github.com/lunas-engine/lunas-core/tree/v0.0.1). This is the code as it was at the time of writing this post.
 
 ## Next Steps
-Next I want to setup dependency injection with decorators, setup the callback system and maybe start on the renderer.
+Next, I plan to set up dependency injection with decorators, implement the callback system, and maybe start working on the renderer.
