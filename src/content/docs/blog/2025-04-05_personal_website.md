@@ -4,7 +4,6 @@ date: 2025-04-05
 prev: false
 next: false
 tableOfContents: false
-excerpt: A brief overview of my new website built with Astro and Starlight, featuring a project showcase and a blog to document my journey in creating a 2D game engine. [read more](2025-04-05_personal_website)
 ---
 
 It's time for a new iteration of my website. I want to showcase some of the projects I've been working on and start writing a blog again.  

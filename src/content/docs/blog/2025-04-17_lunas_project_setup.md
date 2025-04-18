@@ -4,7 +4,6 @@ date: 2025-04-17
 prev: false
 next: false
 tags: [lunas]
-excerpt: Learn how I set up the Lunas game engine project with TypeScript, Pnpm, and Vite. This post covers the project structure, build configuration, and a simple game loop implementation. [read more](2025-04-17_lunas_project_setup)
 ---
 
 In my last post, I wrote about the requirements for Lunas. It will be a web-first game engine written in TypeScript. I will use [Node.js](https://nodejs.org/en), [Pnpm](https://pnpm.io), and [Vite](https://vite.dev) to build the engine. There are some other dev dependencies like Prettier and ESLint, but I won't be using any libraries for the engine core.
@@ -152,8 +151,10 @@ export class Game {
   }
 }
 ```
+The WebGL context will be separated out of the `Game` class in the future.
 
-The WebGL context will be separated out of the `Game` class in the future. If you're interested, you can check out the source [here](https://github.com/lunas-engine/lunas-core/tree/v0.0.1). This is the code as it was at the time of writing this post.
+## The Source Code
+ If you're interested, you can check out the source at [here](https://github.com/lunas-engine/lunas-core/tree/v0.0.1). This is the code as it was at the time of writing this post.
 
 ## Next Steps
 Next, I plan to set up dependency injection with decorators, implement the callback system, and maybe start working on the renderer.

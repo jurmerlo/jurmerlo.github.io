@@ -4,7 +4,6 @@ date: 2025-04-06
 prev: false
 next: false
 tags: [lunas]
-excerpt: Introducing Lunas, a lightweight and flexible 2D game engine built with TypeScript and WebGL. Follow along as I document its development, from core features to plugin extensions. [read more](2025-04-06_lunas_start)
 ---
 
 ## A New Game Engine
